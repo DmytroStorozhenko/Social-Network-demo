@@ -1,7 +1,7 @@
 import React, {lazy, Suspense} from 'react';
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
-import {BrowserRouter, Route, Switch, withRouter} from "react-router-dom";
+import {HashRouter, Route, Switch, withRouter} from "react-router-dom";
 //import DialogsContainer from "./Components/Dialogs/DialogsContainer";
 //import UsersContainer from "./Components/Users/UsersContainer";
 //import ProfileContainer from "./Components/Profile/ProfileContainer";
@@ -62,11 +62,11 @@ let AppContainer = compose(
 )(App);
 
 const MySocialNetworkApp = (props) => {
-    return <BrowserRouter>
+    return <HashRouter>
         <Provider store={store}>
             <AppContainer/>
         </Provider>
-    </BrowserRouter>
+    </HashRouter>
 };
 
 export default MySocialNetworkApp;
