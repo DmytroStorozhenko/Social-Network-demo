@@ -23,6 +23,7 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
             <b>{contactTitle}</b>: {contactValue}
         </div>
     }
+
     /*-----------ProfileDataComponent------------*/
     const ProfileData = ({profile, isOwner, goToEditMode}) => {
         return (
@@ -55,6 +56,7 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
         )
     }
 
+    /*-----------Func for submit profile data------------*/
     const onSubmit = (formData) => {
         saveProfile(formData).then( () => {
                 setEditMode(false);
