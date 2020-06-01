@@ -34,7 +34,7 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
                 </div>
                 }
                 <div>
-                    <b>Full name</b>: {profile.fullname}
+                    <b>Full name</b>: {profile.fullName}
                 </div>
                 <div>
                     <b>About me</b>: {profile.aboutMe}
@@ -68,7 +68,7 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
         <div className={classes.descriptionBlock}>
 
             {/*-----------'Avatar'-----------*/}
-            <div className={classes.avatar}><img src={profile.photos.large || userPhoto} alt={""}/>
+            <div><img src={profile.photos.large || userPhoto} className={classes.avatar} alt={""}/>
                 {isOwner && <input type={'file'} onChange={onMainPhotoSelected}/>}
             </div>
 

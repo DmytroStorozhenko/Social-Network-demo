@@ -16,7 +16,7 @@ const ProfileDataForm = ({profile, handleSubmit, error}) => {
         </div>
         <div>
             <b>About me</b>:
-            {createField( 'Something about you..', 'aboutMe', Textarea, [] )}
+            {createField( 'Something about you..', 'aboutMe', Textarea, [])}
         </div>
         <div>
             <b>Looking for a job</b>: {createField('','lookingForAJob', Input, [], {type: 'checkbox'})}

@@ -4,7 +4,7 @@ import {stopSubmit} from "redux-form";
 const ADD_POST = 'PROFILE/ADD-POST';
 const SET_USER_PROFILE = 'PROFILE/SET_USER_PROFILE';
 const SET_STATUS = 'PROFILE/SET_STATUS';
-const SAVE_PHOTO_SUCCESS = 'SAVE_PHOTO_SUCCESS';
+const SAVE_PHOTO_SUCCESS = 'PROFILE/SAVE_PHOTO_SUCCESS';
 
 let initialState = {
     posts: [],

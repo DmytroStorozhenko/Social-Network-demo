@@ -1,10 +1,7 @@
 import React, {lazy, Suspense} from 'react';
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
-import {HashRouter, Route, Switch, withRouter} from "react-router-dom";
-//import DialogsContainer from "./Components/Dialogs/DialogsContainer";
-//import UsersContainer from "./Components/Users/UsersContainer";
-//import ProfileContainer from "./Components/Profile/ProfileContainer";
+import {HashRouter, Redirect, Route, Switch, withRouter} from "react-router-dom";
 import HeaderContainer from "./Components/Header/HeaderContainer";
 import Login from "./Components/Login/Login";
 import {compose} from "redux";
@@ -35,12 +32,16 @@ class App extends React.Component {
                 <div className='app-wrapper-content'>
                     <Suspense fallback={<div><Preloader/></div>}>
                         <Switch>
+                            <Route exact path='/'
+                                   render={() => <Redirect to={'/profile'}/> }/>
                             <Route path='/profile/:userId?'
                                    render={() => <ProfileContainer/>}/>
                             <Route path='/dialogs'
                                    render={() => <DialogsContainer/>}/>
                             <Route path='/users'
                                    render={() => <UsersContainer/>}/>
+                            <Route path='*'
+                                   render={() => <div>404 NOT FOUND</div>}/>
                         </Switch>
                     </Suspense>
                     <Route path='/login'
