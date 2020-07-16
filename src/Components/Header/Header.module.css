@@ -1,16 +1,25 @@
 .header {
-    grid-area: h;
+    display: grid;
+    grid-area: header;
+    grid-template-columns: auto auto;
+    grid-auto-rows: auto;
     background-color: cadetblue;
+    align-content: center;
+    justify-content: space-between;
 }
 
 .header img {
-    width: 20px;
+    width: 90px;
+    border-radius: 10px;
+    margin-left: 15px;
 }
 
 .loginBlock {
-	float: right;
+    margin-right: 15px;
 }
 
+
 .loginBlock a {
-	color: white;
+    color: white;
+    font-size: large;
 }

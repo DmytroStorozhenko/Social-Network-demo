@@ -1,16 +1,48 @@
+/*@import '~antd/dist/antd.css';*/
+
 .app-wrapper {
     display: grid;
-    width: 1200px;
     margin: 0 auto;
-    grid-template-areas: "h h" "n c";
     grid-template-rows: 60px 1fr;
-    grid-template-columns: 2fr 10fr;
-    /* grid-gap: 10px; */
+    grid-template-columns: minmax(auto, 1fr) min-content 10fr minmax(auto, 1fr);
+    grid-gap: 15px;
+    grid-template-areas:
+            "header header header header"
+            ". navbar content .";
 }
 
 .app-wrapper-content {
-    grid-area: c;
+    grid-area: content;
     background-color: powderblue;
+    border-radius: 5px;
+    padding: 20px;
+    min-width: fit-content;
 }
 
+
+@media (max-width: 1050px) {
+    .app-wrapper {
+        grid-template-columns: minmax(auto, 0.5fr) auto 10fr minmax(auto, 0.5fr);
+    }
+}
+
+
+
+@media (max-width: 750px) {
+    .app-wrapper {
+        grid-template-columns: minmax(auto, 0.25fr) fit-content(50%) 10fr minmax(auto, 0.25fr);
+    }
+}
+
+
+@media (max-width: 550px) {
+    .app-wrapper {
+        grid-template-columns: minmax(auto, 0.25fr) 4fr minmax(auto, 0.25fr);
+        grid-template-rows: 60px 20px 4fr;
+        grid-template-areas:
+                "header header header"
+                ". navbar ."
+                ". content .";
+    }
+}
 

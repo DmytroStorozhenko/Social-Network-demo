@@ -1,5 +1,53 @@
 .descriptionBlock {
     padding: 10px;
+    display: grid;
+    grid-template-areas:
+            "ava status"
+            "ava data"
+            ". data";
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 0.5fr 3fr auto;
+}
+
+.avatarBlock {
+    grid-area: ava;
+    margin-right: 25px;
+}
+
+.status {
+    grid-area: status;
+    max-height: 20px;
+}
+
+.profileData {
+    grid-area: data;
+}
+
+.fileSelect {
+    margin-top: 5px;
+}
+
+.fileSelect input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.fileSelect label {
+    background-color: lavender;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 3px;
+    border: 1px solid gray;
+}
+
+.fileSelect label:focus,
+.fileSelect label:hover {
+    background-color: cadetblue;
+    color: white;
 }
 
 .contact {
@@ -8,5 +56,9 @@
 
 .avatar {
     width: 150px;
+    border-radius: 5px;
+}
 
+.statusText {
+    cursor: pointer;
 }
